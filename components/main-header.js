@@ -1,18 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
 import logoImg from "@/assets/logo.png";
+import NavLink from "./nav-link";
+
+const nav = [
+  { routes: "/meals", name: "Meals" },
+  { routes: "/community", name: "Community" },
+  { routes: "/blog", name: "Blog" },
+  { routes: "/about", name: "About" },
+];
 
 export default function MainHeader() {
-  const nav = [
-    { routes: "/meals", name: "Meals" },
-    { routes: "/community", name: "Community" },
-    { routes: "/blog", name: "Blog" },
-    { routes: "/about", name: "About" },
-  ];
-
   return (
     <header className="flex items-center justify-between mb-6">
-      <Link href="/" className="flex items-center gap-4 text-2xl font-semibold">
+      <Link
+        href="/"
+        className="flex items-center gap-4 text-2xl font-semibold group"
+      >
         <Image
           src={logoImg}
           alt="Logo"
@@ -20,8 +24,9 @@ export default function MainHeader() {
           height={75}
           priority
           placeholder="blur"
+          className="group-hover:rotate-45 transition-all duration-300 ease-in-out"
         />
-        <span className="bg-primary bg-clip-text text-transparent">
+        <span className="bg-primary bg-clip-text text-transparent ">
           NextLevel Food
         </span>
       </Link>
@@ -29,12 +34,7 @@ export default function MainHeader() {
         <ul className="flex gap-6">
           {nav.map((item, index) => (
             <li key={index}>
-              <Link
-                href={item.routes}
-                className="hover:bg-primary hover:bg-clip-text hover:text-transparent"
-              >
-                {item.name}
-              </Link>
+              <NavLink item={item} />
             </li>
           ))}
         </ul>
