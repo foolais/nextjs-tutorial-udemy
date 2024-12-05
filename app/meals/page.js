@@ -1,22 +1,21 @@
 import Link from "next/link";
-import Header from "@/components/header";
 
-export default function Home() {
+export default function Meals() {
   return (
     <main>
-      <Header />
+      <h1>Meals</h1>
       <div className="link-container">
         <p className="link">
-          <Link href="/about">About</Link>
+          <Link href="/">Home</Link>
         </p>
         <p className="link">
-          <Link href="/blog">Blog</Link>
+          <Link href="/meals/pizza">Pizza</Link>
         </p>
         <p className="link">
-          <Link href="/meals">Meals</Link>
+          <Link href="/meals/burger">Burger</Link>
         </p>
         <p className="link">
-          <Link href="/community">Community</Link>
+          <Link href="/meals/share">Share Meals</Link>
         </p>
       </div>
     </main>
