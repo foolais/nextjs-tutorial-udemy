@@ -6,7 +6,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        primary: "linear-gradient(to right, #ff512f, #dd2476)",
+      },
+    },
   },
   plugins: [],
 };
