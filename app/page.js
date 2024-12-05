@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Header from "@/components/header";
 
 export default function Home() {
   return (
     <main>
-      <h1>Hello NextJS</h1>
+      <Header />
       <p style={{ color: "teal", marginTop: ".5rem" }}>
         <Link href="/about">About</Link>
       </p>
