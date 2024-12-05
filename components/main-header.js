@@ -3,12 +3,10 @@ import Image from "next/image";
 import logoImg from "@/assets/logo.png";
 
 export default function MainHeader() {
-  const onHover = "hover:bg-primary hover:bg-clip-text hover:text-transparent";
-
   const nav = [
     { routes: "/meals", name: "Meals" },
-    { routes: "/blog", name: "Blog" },
     { routes: "/community", name: "Community" },
+    { routes: "/blog", name: "Blog" },
     { routes: "/about", name: "About" },
   ];
 
@@ -24,14 +22,17 @@ export default function MainHeader() {
           placeholder="blur"
         />
         <span className="bg-primary bg-clip-text text-transparent">
-          NextJS Meal App
+          NextLevel Food
         </span>
       </Link>
       <nav className="my-4">
         <ul className="flex gap-6">
           {nav.map((item, index) => (
             <li key={index}>
-              <Link href={item.routes} className={onHover}>
+              <Link
+                href={item.routes}
+                className="hover:bg-primary hover:bg-clip-text hover:text-transparent"
+              >
                 {item.name}
               </Link>
             </li>
