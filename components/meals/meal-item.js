@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function MealItem(props) {
-  const { id, title, creator, slug, image, description } = props;
+  const { id, title, creator, slug, image, summary } = props;
 
   return (
     <article className="rounded-lg overflow-hidden bg-stone-800">
@@ -18,7 +18,9 @@ export default function MealItem(props) {
         </div>
       </header>
       <div className="px-4 pb-4">
-        <p className="font-light">{description}</p>
+        <p className="font-light text-balance">
+          {summary.length < 100 ? summary : summary.slice(0, 100) + "..."}
+        </p>
         <div className="mt-6 flex justify-end">
           <Link
             href={`/meals/${slug}`}
