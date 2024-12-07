@@ -9,7 +9,7 @@ const dummyData = [
     description: "This is a description of the Asian food.",
     instructions: "1. Do this\n2. Do that\n3. Do something else",
     creator: "John Doe",
-    creatorEmail: "johndoe@example.com",
+    creator_email: "johndoe@example.com",
   },
   {
     title: "Japan Food",
@@ -18,7 +18,7 @@ const dummyData = [
     description: "This is a description of the Japan food.",
     instructions: "1. Do this\n2. Do that\n3. Do something else",
     creator: "Mary Doe",
-    creatorEmail: "marydoe@example.com",
+    creator_email: "marydoe@example.com",
   },
 ];
 
