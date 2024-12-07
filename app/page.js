@@ -25,9 +25,11 @@ export default function Home() {
             </Link>
             <Link
               href="/meals"
-              className="bg-primary py-2 px-4 rounded-md font-semibold"
+              className="bg-primary py-2 px-4 rounded-md font-semibold group"
             >
-              <span className="text-white">Explore Meals</span>
+              <span className="text-white group-hover:text-foreground transition-all duration-300 ease-in-out">
+                Explore Meals
+              </span>
             </Link>
           </div>
         </div>
