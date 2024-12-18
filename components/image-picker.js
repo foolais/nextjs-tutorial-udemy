@@ -28,9 +28,11 @@ export default function ImagePicker({ label, name }) {
 
   return (
     <div>
-      <label htmlFor={name}>{label}</label>
+      <label htmlFor={name} className="hidden">
+        {label}
+      </label>
       <div className="grid gap-4">
-        <div className="relative w-56 h-56 border-[1px] border-white flex items-center justify-center">
+        <div className="relative w-56 h-56 border-[1px] border-white rounded-md flex items-center justify-center">
           {pickedImage ? (
             <Image
               src={pickedImage}

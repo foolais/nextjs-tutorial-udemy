@@ -1,9 +1,10 @@
 import ImagePicker from "@/components/image-picker";
+import { shareMealHandler } from "@/lib/actions";
 
 export default function ShareMeals() {
   const inputContainer = "grid gap-1 mb-4";
   const labelClassName = "uppercase font-semibold text-sm";
-  const inputClassName = "bg-black bg-opacity-50 px-4 py-2 rounded-md";
+  const inputClassName = "bg-black px-4 py-2 rounded-md";
 
   return (
     <>
@@ -17,7 +18,7 @@ export default function ShareMeals() {
         <p className="mt-2 mb-4 text-lg">Or any other meal you like!</p>
       </header>
       <main>
-        <form className="w-[650px] px-8">
+        <form className="w-[650px] px-8" action={shareMealHandler}>
           <div className="grid grid-cols-2 gap-4">
             <p className={inputContainer}>
               <label htmlFor="name" className={labelClassName}>
@@ -80,7 +81,7 @@ export default function ShareMeals() {
               required
             />
           </p>
-          <ImagePicker />
+          <ImagePicker label="meal image" name="image" />
           <p className="flex justify-end">
             <button
               type="submit"
