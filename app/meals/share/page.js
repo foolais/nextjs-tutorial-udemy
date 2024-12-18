@@ -1,3 +1,5 @@
+import ImagePicker from "@/components/image-picker";
+
 export default function ShareMeals() {
   const inputContainer = "grid gap-1 mb-4";
   const labelClassName = "uppercase font-semibold text-sm";
@@ -73,12 +75,12 @@ export default function ShareMeals() {
             <textarea
               id="instructions"
               name="instructions"
-              rows="10"
+              rows="5"
               className={inputClassName}
               required
             />
           </p>
-          IMAGEPICKER
+          <ImagePicker />
           <p className="flex justify-end">
             <button
               type="submit"
