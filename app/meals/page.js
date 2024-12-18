@@ -14,11 +14,11 @@ export default function MealsPage() {
   return (
     <>
       <header className="pb-12 px-8">
-        <h1 className="text-3xl font-bold tracwing-wide">
+        <h1 className="text-3xl font-bold tracking-wide">
           Delicious Food, created by{" "}
           <span className="bg-primary bg-clip-text text-transparent">you</span>
         </h1>
-        <p className="mt-6 mb-4 text-lg tracking-wide">
+        <p className="mt-2 mb-4 text-lg tracking-wide">
           Choose your favorite recipe and make it by yourself!
         </p>
         <p>
