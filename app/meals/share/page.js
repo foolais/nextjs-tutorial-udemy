@@ -1,10 +1,18 @@
+"use client";
+
 import ImagePicker from "@/components/image-picker";
+import MealFormSubmit from "@/components/meals/meal-form-submit";
 import { shareMealHandler } from "@/lib/actions";
+import { useActionState } from "react";
 
 export default function ShareMeals() {
   const inputContainer = "grid gap-1 mb-4";
   const labelClassName = "uppercase font-semibold text-sm";
   const inputClassName = "bg-black px-4 py-2 rounded-md";
+
+  const [state, formAction] = useActionState(shareMealHandler, {
+    message: null,
+  });
 
   return (
     <>
@@ -18,7 +26,7 @@ export default function ShareMeals() {
         <p className="mt-2 mb-4 text-lg">Or any other meal you like!</p>
       </header>
       <main>
-        <form className="w-[650px] px-8" action={shareMealHandler}>
+        <form className="w-[650px] px-8" action={formAction}>
           <div className="grid grid-cols-2 gap-4">
             <p className={inputContainer}>
               <label htmlFor="name" className={labelClassName}>
@@ -28,7 +36,6 @@ export default function ShareMeals() {
                 type="text"
                 id="name"
                 name="name"
-                required
                 className={inputClassName}
               />
             </p>
@@ -40,7 +47,6 @@ export default function ShareMeals() {
                 type="email"
                 id="email"
                 name="email"
-                required
                 className={inputClassName}
               />
             </p>
@@ -53,7 +59,6 @@ export default function ShareMeals() {
               type="text"
               id="title"
               name="title"
-              required
               className={inputClassName}
             />
           </p>
@@ -65,7 +70,6 @@ export default function ShareMeals() {
               type="text"
               id="summary"
               name="summary"
-              required
               className={inputClassName}
             />
           </p>
@@ -78,17 +82,16 @@ export default function ShareMeals() {
               name="instructions"
               rows="5"
               className={inputClassName}
-              required
             />
           </p>
           <ImagePicker label="meal image" name="image" />
+          {state.message && (
+            <p className="text-red-500 text-center font-semibold my-4">
+              {state.message}
+            </p>
+          )}
           <p className="flex justify-end">
-            <button
-              type="submit"
-              className="bg-primary py-2 px-4 rounded-md font-semibold hover:text-foreground transition-all duration-300 ease-in-out"
-            >
-              Share Meal
-            </button>
+            <MealFormSubmit />
           </p>
         </form>
       </main>

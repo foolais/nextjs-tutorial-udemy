@@ -28,10 +28,10 @@ export default function ImagePicker({ label, name }) {
 
   return (
     <div>
-      <label htmlFor={name} className="hidden">
+      <label htmlFor={name} className="uppercase font-semibold text-sm">
         {label}
       </label>
-      <div className="grid gap-4">
+      <div className="grid gap-4 mt-1">
         <div className="relative w-56 h-56 border-[1px] border-white rounded-md flex items-center justify-center">
           {pickedImage ? (
             <Image
@@ -52,7 +52,6 @@ export default function ImagePicker({ label, name }) {
           accept="image/png, image/jpeg"
           name={name}
           onChange={imageChangesHandler}
-          required
         />
         <button
           className="h-max w-max bg-primary bg-clip-text text-transparent border-[1px] border-[#ff512f] px-2 py-1 rounded-md font-semibold transition-all duration-300 ease-in-out hover:bg-primary hover:bg-clip-padding hover:text-black"
