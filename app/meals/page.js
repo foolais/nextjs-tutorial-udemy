@@ -4,6 +4,11 @@ import Link from "next/link";
 import { Suspense } from "react";
 import Loading from "./loading-out";
 
+export const metadata = {
+  title: "All Meals | NextLevel Food",
+  description: "Browse our meals",
+};
+
 async function Meals() {
   const meals = await getMeals();
 

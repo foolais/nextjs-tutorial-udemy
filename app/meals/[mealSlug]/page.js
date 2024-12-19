@@ -2,6 +2,20 @@ import { getMealsBySlug } from "@/lib/meals";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+export async function generateMetadata({ params }) {
+  const { mealSlug } = await params;
+  const meal = getMealsBySlug(mealSlug);
+
+  if (!meal) {
+    notFound();
+  }
+
+  return {
+    title: `${meal.title} | NextLevel Food`,
+    description: meal.summary,
+  };
+}
+
 export default async function MealDetailsPage({ params }) {
   const { mealSlug } = await params;
   const meal = await getMealsBySlug(mealSlug);
