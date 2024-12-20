@@ -6,6 +6,7 @@ import NavLink from "./nav-link";
 const nav = [
   { routes: "/meals", name: "Meals" },
   { routes: "/news", name: "News" },
+  { routes: "/archive", name: "Archive" },
   { routes: "/community", name: "Community" },
   { routes: "/about", name: "About" },
 ];

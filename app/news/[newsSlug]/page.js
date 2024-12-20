@@ -1,9 +1,14 @@
 import { DUMMY_NEWS } from "@/lib/dummy-news";
+import { notFound } from "next/navigation";
 import Image from "next/image";
 
 export default async function NewsDetailPage({ params }) {
   const { newsSlug } = await params;
   const newsItem = DUMMY_NEWS.find((item) => item.slug === newsSlug);
+
+  if (!newsItem) {
+    notFound();
+  }
 
   return (
     <article>
@@ -17,7 +22,7 @@ export default async function NewsDetailPage({ params }) {
           />
         </div>
         <h1 className="text-heading text-primary">{newsItem.title} </h1>
-        <time datetime={newsItem.date}>{newsItem.date}</time>
+        <p>{newsItem.date}</p>
       </header>
       <p className="mt-4 tracking-wide">{newsItem.content}</p>
     </article>
