@@ -20,7 +20,7 @@ export default function InterceptedImagePage({ params }) {
       >
         <div className="relative w-full aspect-[4/3]">
           <Image
-            src={`/images/${newsItem.image}`}
+            src={`/images/news/${newsItem.image}`}
             alt={newsItem.title}
             fill
             className="rounded-md object-cover object-center"

@@ -16,7 +16,7 @@ export default function NewsList({ news }) {
             >
               <div className="relative w-full aspect-[4/3]">
                 <Image
-                  src={`/images/${news.image}`}
+                  src={`/images/news/${news.image}`}
                   alt={news.title}
                   fill
                   className="object-cover object-center rounded-md"

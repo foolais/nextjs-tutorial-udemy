@@ -17,7 +17,7 @@ export default async function NewsDetailPage({ params }) {
         <Link href={`/news/${newsItem.slug}/image`}>
           <div className="relative w-[400px] aspect-[4/3]">
             <Image
-              src={`/images/${newsItem.image}`}
+              src={`/images/news/${newsItem.image}`}
               alt={newsItem.title}
               fill
               className="rounded-md object-cover object-center"
