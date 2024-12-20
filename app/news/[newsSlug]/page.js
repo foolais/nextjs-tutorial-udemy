@@ -1,6 +1,7 @@
 import { DUMMY_NEWS } from "@/lib/dummy-news";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function NewsDetailPage({ params }) {
   const { newsSlug } = await params;
@@ -13,14 +14,16 @@ export default async function NewsDetailPage({ params }) {
   return (
     <article>
       <header className="flex flex-col gap-4 mb-4">
-        <div className="relative w-[400px] aspect-[4/3]">
-          <Image
-            src={`/images/${newsItem.image}`}
-            alt={newsItem.title}
-            fill
-            className="rounded-md object-cover object-center"
-          />
-        </div>
+        <Link href={`/news/${newsItem.slug}/image`}>
+          <div className="relative w-[400px] aspect-[4/3]">
+            <Image
+              src={`/images/${newsItem.image}`}
+              alt={newsItem.title}
+              fill
+              className="rounded-md object-cover object-center"
+            />
+          </div>
+        </Link>
         <h1 className="text-heading text-primary">{newsItem.title} </h1>
         <p>{newsItem.date}</p>
       </header>

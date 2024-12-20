@@ -9,8 +9,8 @@ import {
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export default function FilteredNewsPage({ params }) {
-  const { filter } = params;
+export default async function FilteredNewsPage({ params }) {
+  const { filter } = await params;
 
   const selectedYear = filter?.[0];
   const selectedMonth = filter?.[1];
