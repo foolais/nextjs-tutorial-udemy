@@ -7,6 +7,7 @@ import {
   setMonthByNumber,
 } from "@/lib/news";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export default function FilteredNewsPage({ params }) {
   const { filter } = params;
@@ -31,6 +32,14 @@ export default function FilteredNewsPage({ params }) {
 
   if (news && news.length > 0) {
     newsContent = <NewsList news={news} />;
+  }
+
+  if (
+    (selectedYear && !getAvailableNewsYears().includes(+selectedYear)) ||
+    (selectedMonth &&
+      !getAvailableNewsMonths(+selectedYear).includes(+selectedMonth))
+  ) {
+    notFound();
   }
 
   return (
