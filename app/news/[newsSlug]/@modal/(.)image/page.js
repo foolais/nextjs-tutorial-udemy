@@ -16,7 +16,7 @@ export default function InterceptedImagePage({ params }) {
       <ModalBackdrop />
       <dialog
         open
-        className="relative z-50 w-full max-w-4xl p-2 bg-stone-800 rounded-md center overflow-hidden"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-4xl p-2 bg-stone-800 rounded-md overflow-hidden"
       >
         <div className="relative w-full aspect-[4/3]">
           <Image
