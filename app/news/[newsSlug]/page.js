@@ -12,7 +12,7 @@ export default async function NewsDetailPage({ params }) {
   }
 
   return (
-    <article>
+    <article className="absolute top-40">
       <header className="flex flex-col gap-4 mb-4">
         <Link href={`/news/${newsItem.slug}/image`}>
           <div className="relative w-[400px] aspect-[4/3]">
