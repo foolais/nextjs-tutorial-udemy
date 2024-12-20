@@ -18,10 +18,7 @@ export default function ShareMeals() {
     <>
       <header className="pb-10 px-8">
         <h1 className="text-3xl font-bold tracking-wide">
-          Share your{" "}
-          <span className="bg-primary bg-clip-text text-transparent">
-            favorite meals
-          </span>
+          Share your <span className="text-primary">favorite meals</span>
         </h1>
         <p className="mt-2 mb-4 text-lg">Or any other meal you like!</p>
       </header>

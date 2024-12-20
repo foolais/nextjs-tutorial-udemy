@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-primary {
+    @apply bg-primary bg-clip-text text-transparent;
+  }
+  .text-heading {
+    @apply text-3xl font-bold tracking-wide;
+  }
+  .center {
+    @apply flex items-center justify-center;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -36,16 +48,6 @@ body::-webkit-scrollbar {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-.link-container {
-  display: flex;
-  gap: 1rem;
-  margin-top: 0.5rem;
-}
-
-.link {
-  color: teal;
 }
 
 input:-webkit-autofill,

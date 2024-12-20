@@ -10,8 +10,8 @@ export default function NavLink({ item }) {
       href={item.routes}
       className={
         path.startsWith(item.routes)
-          ? "bg-primary bg-clip-text text-transparent"
-          : "hover:bg-primary hover:bg-clip-text hover:text-transparent transition-all duration-300 ease-in-out"
+          ? "text-primary font-semibold"
+          : "hover:text-primary transition-all duration-300 ease-in-out font-semibold"
       }
     >
       {item.name}

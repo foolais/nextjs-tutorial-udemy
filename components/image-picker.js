@@ -54,7 +54,7 @@ export default function ImagePicker({ label, name }) {
           onChange={imageChangesHandler}
         />
         <button
-          className="h-max w-max bg-primary bg-clip-text text-transparent border-[1px] border-[#ff512f] px-2 py-1 rounded-md font-semibold transition-all duration-300 ease-in-out hover:bg-primary hover:bg-clip-padding hover:text-black"
+          className="h-max w-max text-primary border-[1px] border-[#ff512f] px-2 py-1 rounded-md font-semibold transition-all duration-300 ease-in-out hover:bg-primary hover:bg-clip-padding hover:text-black"
           type="button"
           onClick={pickImageHandler}
         >

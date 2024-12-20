@@ -15,10 +15,7 @@ export default function Community() {
       <header className="flex flex-col items-center gap-4 text-center mb-8">
         <h1 className="text-3xl font-semibold">
           One shared passion for
-          <span className="bg-primary bg-clip-text text-transparent">
-            {" "}
-            Food
-          </span>
+          <span className="text-primary"> Food</span>
         </h1>
         <p className="text-lg w-3/4">
           The community is a place where people come together to share their

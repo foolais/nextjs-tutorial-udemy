@@ -5,8 +5,8 @@ import NavLink from "./nav-link";
 
 const nav = [
   { routes: "/meals", name: "Meals" },
+  { routes: "/news", name: "News" },
   { routes: "/community", name: "Community" },
-  { routes: "/blog", name: "Blog" },
   { routes: "/about", name: "About" },
 ];
 
@@ -26,9 +26,7 @@ export default function MainHeader() {
           placeholder="blur"
           className="group-hover:rotate-45 transition-all duration-300 ease-in-out"
         />
-        <span className="bg-primary bg-clip-text text-transparent ">
-          NextLevel Food
-        </span>
+        <span className="text-primary ">NextLevel Food</span>
       </Link>
       <nav className="my-4">
         <ul className="flex gap-6">

@@ -10,7 +10,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col w-[450px]">
           <div>
-            <h1 className="bg-primary bg-clip-text text-transparent text-4xl font-bold">
+            <h1 className="text-primary text-heading">
               NEXTLEVEL FOOD FOR EVERYONE
             </h1>
             <p className="mt-2 text-lg font-light">
@@ -19,9 +19,7 @@ export default function Home() {
           </div>
           <div className="mt-6 flex gap-8 items-center">
             <Link href="/community" className="font-semibold">
-              <span className="bg-primary bg-clip-text text-transparent">
-                Join the Community
-              </span>
+              <span className="text-primary">Join the Community</span>
             </Link>
             <Link
               href="/meals"
@@ -36,9 +34,7 @@ export default function Home() {
       </header>
       <main className="flex flex-col items-center gap-6 text-center mt-16">
         <section className="flex flex-col items-center max-w-[550px]">
-          <h2 className="text-2xl font-semibold bg-primary bg-clip-text text-transparent">
-            How it works
-          </h2>
+          <h2 className="text-2xl font-semibold text-primary">How it works</h2>
           <p className="mt-6 mb-4">
             NextLevel Food is a platform for foodies to share their favorite
             recipes with the world. It&apos;s a place to discover new dishes,
@@ -50,7 +46,7 @@ export default function Home() {
           </p>
         </section>
         <section className="flex flex-col items-center max-w-[550px] mt-6">
-          <h2 className="text-2xl font-semibold bg-primary bg-clip-text text-transparent">
+          <h2 className="text-2xl font-semibold text-primary">
             Why NextLevel Food?
           </h2>
           <p className="mt-6 mb-4">

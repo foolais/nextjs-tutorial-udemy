@@ -43,10 +43,7 @@ export default async function MealDetailsPage({ params }) {
           </h1>
           <p className="my-3 text-stone-400">
             by{" "}
-            <a
-              href={`mailto:${meal.creator_email}`}
-              className="bg-primary bg-clip-text text-transparent"
-            >
+            <a href={`mailto:${meal.creator_email}`} className="text-primary">
               {meal.creator}
             </a>
           </p>
