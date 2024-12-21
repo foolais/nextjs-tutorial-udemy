@@ -1,3 +1,4 @@
+import NavBack from "@/components/nav-back";
 import NewsList from "@/components/news/news-list";
 import {
   getAvailableNewsMonths,
@@ -16,15 +17,15 @@ export default async function FilteredNewsPage({ params }) {
   const selectedMonth = filter?.[1];
 
   let news;
-  let links = getAvailableNewsYears();
+  let links = await getAvailableNewsYears();
 
   if (selectedYear && !selectedMonth) {
-    news = getNewsForYear(selectedYear);
-    links = getAvailableNewsMonths(selectedYear);
+    news = await getNewsForYear(selectedYear);
+    links = await getAvailableNewsMonths(selectedYear);
   }
 
   if (selectedYear && selectedMonth) {
-    news = getNewsForYearAndMonth(selectedYear, selectedMonth);
+    news = await getNewsForYearAndMonth(selectedYear, selectedMonth);
     links = [];
   }
 
@@ -35,9 +36,8 @@ export default async function FilteredNewsPage({ params }) {
   }
 
   if (
-    (selectedYear && !getAvailableNewsYears().includes(+selectedYear)) ||
-    (selectedMonth &&
-      !getAvailableNewsMonths(+selectedYear).includes(+selectedMonth))
+    (selectedYear && !getAvailableNewsYears()) ||
+    (selectedMonth && !getAvailableNewsMonths(+selectedYear))
   ) {
     notFound();
   }
@@ -47,10 +47,15 @@ export default async function FilteredNewsPage({ params }) {
       <header>
         <nav>
           <ul className="flex gap-6 mb-4">
+            {selectedYear && (
+              <li>
+                <NavBack text="Go back" />
+              </li>
+            )}
             {links.map((link) => {
               const href = selectedYear
-                ? `/archive/${selectedYear}/${link}`
-                : `/archive/${link}`;
+                ? `/archive/filter/${selectedYear}/${link}`
+                : `/archive/filter/${link}`;
 
               return (
                 <li key={link}>
@@ -58,7 +63,7 @@ export default async function FilteredNewsPage({ params }) {
                     href={href}
                     className="hover:text-primary text-lg font-semibold transition-all duration-300 ease-in-out text-stone-300"
                   >
-                    {selectedYear ? setMonthByNumber(link) : link}
+                    {selectedYear ? setMonthByNumber(+link) : link}
                   </Link>
                 </li>
               );

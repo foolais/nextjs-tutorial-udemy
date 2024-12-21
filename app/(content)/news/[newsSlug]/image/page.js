@@ -1,10 +1,10 @@
-import { DUMMY_NEWS } from "@/lib/dummy-news";
+import { getNewsItem } from "@/lib/news";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
 export default async function ImagePage({ params }) {
   const { newsSlug } = await params;
-  const newsItem = DUMMY_NEWS.find((item) => item.slug === newsSlug);
+  const newsItem = await getNewsItem(newsSlug);
 
   if (!newsItem) {
     notFound();
