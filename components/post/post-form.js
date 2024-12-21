@@ -30,7 +30,7 @@ export default function PostForm({ action }) {
           </p>
           <p className="input-container">
             <label htmlFor="image" className="input-label">
-              Image URL
+              Image
             </label>
             <input
               type="file"
