@@ -7,7 +7,7 @@ export default function NavBack({ text }) {
   return (
     <div
       onClick={router.back}
-      className="hover:text-primary text-lg font-semibold transition-all duration-300 ease-in-out text-stone-300 cursor-pointer flex items-center gap-2"
+      className="hover:text-primary text-lg font-semibold transition-all duration-300 ease-in-out text-stone-300 cursor-pointer flex items-center gap-2 w-max"
     >
       <span>{"< "}</span>
       {text}
