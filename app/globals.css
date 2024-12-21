@@ -12,6 +12,9 @@
   .center {
     @apply flex items-center justify-center;
   }
+  .text-loading {
+    @apply animate-pulse text-primary font-semibold;
+  }
 }
 
 :root {
