@@ -1,72 +1,37 @@
-import NavBack from "@/components/nav-back";
+import PostForm from "@/components/post/post-form";
 import { storePost } from "@/lib/post";
+import { redirect } from "next/navigation";
 
 export default function NewPostsPage() {
-  async function createPost(formData) {
+  async function createPost(prevState, formData) {
     "use server";
     const title = formData.get("title");
     const image = formData.get("image");
     const content = formData.get("content");
 
-    storePost({
+    let errors = [];
+
+    if (!title || title.trim().length === 0) {
+      errors.push("Title is required!");
+    }
+
+    if (!image || image?.size === 0) errors.push("Image is required!");
+
+    if (!content || content.trim().length === 0) {
+      errors.push("Content is required!");
+    }
+
+    if (errors.length > 0) return { errors };
+
+    await storePost({
       imageUrl: "",
       title,
       content,
       userId: 1,
     });
+
+    redirect("/post");
   }
-  return (
-    <>
-      <header>
-        <NavBack text="Back to all posts" />
-        <h1 className="text-heading my-6">
-          <span className="text-primary">Create</span> a new post
-        </h1>
-      </header>
-      <main>
-        <form action={createPost} className="w-10/12">
-          <p className="input-container">
-            <label htmlFor="title" className="input-label">
-              Title
-            </label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              className="input-field"
-            />
-          </p>
-          <p className="input-container">
-            <label htmlFor="image" className="input-label">
-              Image URL
-            </label>
-            <input
-              type="file"
-              accept="image/png, image/jpeg"
-              id="image"
-              name="image"
-              className="input-field"
-            />
-          </p>
-          <p className="input-container">
-            <label htmlFor="content" className="input-label">
-              Content
-            </label>
-            <textarea
-              id="content"
-              name="content"
-              rows="5"
-              className="input-field"
-            />
-          </p>
-          <p className="flex gap-8 justify-end mt-8">
-            <button type="reset" className="hover:text-primary font-semibold">
-              Reset
-            </button>
-            <button className="btn-primary">Create Post</button>
-          </p>
-        </form>
-      </main>
-    </>
-  );
+
+  return <PostForm action={createPost} />;
 }
