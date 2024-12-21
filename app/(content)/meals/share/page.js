@@ -6,10 +6,6 @@ import { shareMealHandler } from "@/lib/actions";
 import { useActionState } from "react";
 
 export default function ShareMeals() {
-  const inputContainer = "grid gap-1 mb-4";
-  const labelClassName = "uppercase font-semibold text-sm";
-  const inputClassName = "bg-black px-4 py-2 rounded-md";
-
   const [state, formAction] = useActionState(shareMealHandler, {
     message: null,
   });
@@ -25,60 +21,60 @@ export default function ShareMeals() {
       <main>
         <form className="w-[650px] px-8" action={formAction}>
           <div className="grid grid-cols-2 gap-4">
-            <p className={inputContainer}>
-              <label htmlFor="name" className={labelClassName}>
+            <p className="input-container">
+              <label htmlFor="name" className="input-label">
                 Your name
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                className={inputClassName}
+                className="input-field"
               />
             </p>
-            <p className={inputContainer}>
-              <label htmlFor="email" className={labelClassName}>
+            <p className="input-container">
+              <label htmlFor="email" className="input-label">
                 Your email
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                className={inputClassName}
+                className="input-field"
               />
             </p>
           </div>
-          <p className={inputContainer}>
-            <label htmlFor="title" className={labelClassName}>
+          <p className="input-container">
+            <label htmlFor="title" className="input-label">
               Title
             </label>
             <input
               type="text"
               id="title"
               name="title"
-              className={inputClassName}
+              className="input-field"
             />
           </p>
-          <p className={inputContainer}>
-            <label htmlFor="summary" className={labelClassName}>
+          <p className="input-container">
+            <label htmlFor="summary" className="input-label">
               Short Summary
             </label>
             <input
               type="text"
               id="summary"
               name="summary"
-              className={inputClassName}
+              className="input-field"
             />
           </p>
-          <p className={inputContainer}>
-            <label htmlFor="instructions" className={labelClassName}>
+          <p className="input-container">
+            <label htmlFor="instructions" className="input-label">
               Instructions
             </label>
             <textarea
               id="instructions"
               name="instructions"
               rows="5"
-              className={inputClassName}
+              className="input-field"
             />
           </p>
           <ImagePicker label="meal image" name="image" />

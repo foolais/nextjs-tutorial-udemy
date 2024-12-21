@@ -5,10 +5,10 @@ import NavLink from "./nav-link";
 
 const nav = [
   { routes: "/meals", name: "Meals" },
+  { routes: "/post", name: "Post" },
   { routes: "/news", name: "News" },
   { routes: "/archive/filter", name: "Archive" },
   { routes: "/community", name: "Community" },
-  { routes: "/about", name: "About" },
 ];
 
 export default function MainHeader() {
